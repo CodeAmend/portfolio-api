@@ -12,7 +12,13 @@ before((done) => {
 });
 
 after(() => {
-  mongoose.disconnect((err) => {
-    console.warn("Mongoose disconnect error: ", err);
-  });
+  mongoose.disconnect((err) => {});
+  mongoose.models = {}
 });
+
+beforeEach((done) => {
+  const {skills} = mongoose.connection.collections;
+  skills.drop()
+  .then(() => done())
+  .catch(() => done())
+})
