@@ -64,13 +64,13 @@ describe("Education Model", () => {
         expect(skill.name).to.eql('Javascript');
       });
 
-    //   it("skill.level", () => {
-    //     const skill = education.skills[0].skill;
-    //     expect(skill).to.have.property('level');
-    //
-    //     expect(skill.level).to.eql(9);
-    //   });
-    //
+      it("skill.level", () => {
+        const skill = education.skills[0].skill;
+        expect(skill).to.have.property('level');
+
+        expect(skill.level).to.eql(9);
+      });
+
     //   it("weight", () => {
     //     expect(education.skills[0]).to.have.property('weight');
     //     expect(education.skills[0].weight).to.eql(3);
