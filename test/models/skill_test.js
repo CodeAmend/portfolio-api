@@ -5,23 +5,28 @@ const Skill = require('../../src/models/skill_schema');
 
 describe("Skill Model", () => {
 
-  it("should save a skill", (done) => {
-    const skill = new Skill({ name: 'Javascript', level: 5 });
-    skill.save()
-    .then(() => {
-      Skill.findOne({ name: 'Javascript' })
-      .then((result) => {
-        
-        // name property
-        expect(result).to.have.property('name');
-        expect(result.name).to.eql('Javascript');
-        // level property
-        expect(result).to.have.property('level');
-        expect(result.level).to.eql(5);
+  let skill;
 
-        done();
-      });
+  beforeEach((done) => {
+    skill = new Skill({ name: "Javascript", level: 9 })
+    skill.save()
+    .then((saved_skill) => {
+      skill = saved_skill;
+      done();
     });
   });
+
+  describe("has properties", () => {
+
+    it("name", () => {
+      expect(skill).to.have.property('name');
+      expect(skill.name).to.eql('Javascript');
+    });
+
+    it("level", () => {
+      expect(skill).to.have.property('level');
+      expect(skill.level).to.eql(9);
+    });
+  })
 
 });
