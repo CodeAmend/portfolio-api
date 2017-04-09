@@ -28,6 +28,7 @@ describe("Project Model", () => {
     beforeEach((done) => {
       project = new Project({
         name: "Portfolio Website",
+        about: "The best project ever.",
         skills: [
           // Javascript
           { skill: skills[0], weight: 6 },
@@ -47,6 +48,11 @@ describe("Project Model", () => {
     it("name", () => {
       expect(project).to.have.property('name');
       expect(project.name).to.eql('Portfolio Website');
+    });
+
+    it("about", () => {
+      expect(project).to.have.property('about');
+      expect(project.about).to.eql('The best project ever.');
     });
 
   });
