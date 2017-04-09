@@ -8,6 +8,10 @@
   *
 
 
+-Saturday 8:00PM
+I had to learn about sub-documents. I have gotten the skill and project model tested with properties.
+
+
 
 ### One of the most annoying errors!!!
 ##### When running Mocha tests
