@@ -55,9 +55,16 @@ describe("Project Model", () => {
       expect(project.about).to.eql('The best project ever.');
     });
 
-    it("skills", () => {
+    it("skills property and length", () => {
       expect(project).to.have.property('skills');
       expect(project.skills).to.have.length(3);
+    });
+
+    it("skills.skill", () => {
+      const skills = project.skills[0];
+      expect(skills.skill).to.have.property('name');
+      expect(skills.skill).to.have.property('level');
+
     });
 
   });
