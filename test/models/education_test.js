@@ -28,7 +28,7 @@ describe("Education Model", () => {
     beforeEach((done) => {
       education = new Education({
         name: "Javascript: The Weird Parts",
-        about: "The best course ever.",
+        about: "The best education ever.",
         skills: [
           // Javascript
           { skill: skills[0], weight: 10 },
@@ -46,11 +46,11 @@ describe("Education Model", () => {
       expect(education.name).to.eql('Javascript: The Weird Parts');
     });
 
-    // it("about", () => {
-    //   expect(education).to.have.property('about');
-    //   expect(education.about).to.eql('The best education ever.');
-    // });
-    //
+    it("about", () => {
+      expect(education).to.have.property('about');
+      expect(education.about).to.eql('The best education ever.');
+    });
+
     // it("skills", () => {
     //   expect(education).to.have.property('skills');
     //   expect(education.skills).to.have.length(3);
