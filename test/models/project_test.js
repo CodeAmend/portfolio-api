@@ -55,6 +55,11 @@ describe("Project Model", () => {
       expect(project.about).to.eql('The best project ever.');
     });
 
+    it("skills", () => {
+      expect(project).to.have.property('skills');
+      expect(project.skills).to.have.length(3);
+    });
+
   });
 
 });
