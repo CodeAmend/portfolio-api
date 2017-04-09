@@ -51,11 +51,11 @@ describe("Education Model", () => {
       expect(education.about).to.eql('The best education ever.');
     });
 
-    // it("skills", () => {
-    //   expect(education).to.have.property('skills');
-    //   expect(education.skills).to.have.length(3);
-    // });
-    //
+    it("skills", () => {
+      expect(education).to.have.property('skills');
+      expect(education.skills).to.have.length(1);
+    });
+
     // describe("skills sub document", () => {
     //
     //   it("skill.name", () => {
