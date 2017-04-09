@@ -54,18 +54,26 @@ describe("Project Model", () => {
       expect(project).to.have.property('about');
       expect(project.about).to.eql('The best project ever.');
     });
+    describe("skills properties", () => {
 
-    it("skills property and length", () => {
-      expect(project).to.have.property('skills');
-      expect(project.skills).to.have.length(3);
-    });
+      it("skills exists", () => {
+        expect(project).to.have.property('skills');
+        expect(project.skills).to.have.length(3);
+      });
 
-    it("skills.skill", () => {
-      const skills = project.skills[0];
-      expect(skills.skill).to.have.property('name');
-      expect(skills.skill).to.have.property('level');
+      it("skills.skill", () => {
+        const skills = project.skills[0];
+        expect(skills.skill).to.have.property('name');
+        expect(skills.skill).to.have.property('level');
 
-    });
+      });
+
+      it("skill.name", () => {
+        const skill = project.skills[0].skill;
+        expect(skill).to.have.property('name');
+        expect(skill.name).to.eql('Javascript');
+      });
+    })
 
   });
 
