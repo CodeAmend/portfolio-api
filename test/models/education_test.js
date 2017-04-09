@@ -56,14 +56,14 @@ describe("Education Model", () => {
       expect(education.skills).to.have.length(1);
     });
 
-    // describe("skills sub document", () => {
-    //
-    //   it("skill.name", () => {
-    //     const skill = education.skills[0].skill;
-    //     expect(skill).to.have.property('name');
-    //     expect(skill.name).to.eql('Javascript');
-    //   });
-    //
+    describe("skills sub document", () => {
+
+      it("skill.name", () => {
+        const skill = education.skills[0].skill;
+        expect(skill).to.have.property('name');
+        expect(skill.name).to.eql('Javascript');
+      });
+
     //   it("skill.level", () => {
     //     const skill = education.skills[0].skill;
     //     expect(skill).to.have.property('level');
@@ -75,8 +75,8 @@ describe("Education Model", () => {
     //     expect(education.skills[0]).to.have.property('weight');
     //     expect(education.skills[0].weight).to.eql(3);
     //   });
-    //
-    // });
+
+    });
 
 
   });
