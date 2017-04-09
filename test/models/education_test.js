@@ -71,10 +71,10 @@ describe("Education Model", () => {
         expect(skill.level).to.eql(9);
       });
 
-    //   it("weight", () => {
-    //     expect(education.skills[0]).to.have.property('weight');
-    //     expect(education.skills[0].weight).to.eql(3);
-    //   });
+      it("weight", () => {
+        expect(education.skills[0]).to.have.property('weight');
+        expect(education.skills[0].weight).to.eql(10);
+      });
 
     });
 
