@@ -9,9 +9,9 @@ describe("Project Model", () => {
   let skills = [];
 
   beforeEach((done) => {
-    const skill1 = new Skill({ name: "Javascript" });
-    const skill2 = new Skill({ name: "Node.js" });
-    const skill3 = new Skill({ name: "React / Redux" });
+    const skill1 = new Skill({ name: "Javascript", level: 6 });
+    const skill2 = new Skill({ name: "Node.js", level: 4 });
+    const skill3 = new Skill({ name: "React / Redux", level: 5 });
     Promise.all([skill1.save(), skill2.save(), skill3.save()])
     .then((results) => {
       results.map((skill) => {
@@ -54,26 +54,28 @@ describe("Project Model", () => {
       expect(project).to.have.property('about');
       expect(project.about).to.eql('The best project ever.');
     });
-    describe("skills properties", () => {
 
-      it("skills exists", () => {
-        expect(project).to.have.property('skills');
-        expect(project.skills).to.have.length(3);
-      });
 
-      it("skills.skill", () => {
-        const skills = project.skills[0];
-        expect(skills.skill).to.have.property('name');
-        expect(skills.skill).to.have.property('level');
+    it("skills exists", () => {
+      expect(project).to.have.property('skills');
+      expect(project.skills).to.have.length(3);
+    });
 
-      });
+    describe("skill properties", () => {
 
       it("skill.name", () => {
         const skill = project.skills[0].skill;
         expect(skill).to.have.property('name');
         expect(skill.name).to.eql('Javascript');
       });
-    })
+
+      it("skill.level", () => {
+        const skill = project.skills[0].skill;
+        expect(skill).to.have.property('level');
+        expect(skill.level).to.eql(6);
+      });
+
+    });
 
   });
 
