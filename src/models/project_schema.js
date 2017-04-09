@@ -5,7 +5,8 @@ const ProjectSchema = Schema({
   name: String,
   about: String,
   skills: [{
-    skill: { type: Schema.Types.ObjectId, ref: 'skill' }
+    skill: { type: Schema.Types.ObjectId, ref: 'skill' },
+    weight: Number
   }]
 });
 
